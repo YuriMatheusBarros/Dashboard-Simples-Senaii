@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+        }
+        .container-login {
+            background: #111;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .container-login h2 {
+            margin-bottom: 1rem;
+        }
+        .grupo-input {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        .grupo-input label {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .grupo-input input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #fff;
+            background: transparent;
+            color: #fff;
+            border-radius: 4px;
+        }
+        .grupo-input input:focus {
+            outline: none;
+            border-color: #aaa;
+        }
+        button {
+            width: 100%;
+            padding: 0.7rem;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #ddd;
+        }
+        .esqueci-senha {
+            margin-top: 0.8rem;
+        }
+        .esqueci-senha a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .esqueci-senha a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-login">
+        <h2>Login</h2>
+        <form id="formulario-login">
+            <div class="grupo-input">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="grupo-input">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+        <div class="esqueci-senha">
+            <a href="#">Esqueceu sua senha?</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('formulario-login').addEventListener('submit', function(evento) {
+            evento.preventDefault(); // Impede o envio do formulário para verificar os campos
+
+            const usuario = document.getElementById('usuario').value;
+            const senha = document.getElementById('senha').value;
+
+            if (usuario && senha) {
+                // Ambos os campos estão preenchidos, redireciona para o dashboard
+                window.location.href = 'http://127.0.0.1:5501/dashboard-student/index.html';
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    </script>
+</body>
+</html>
