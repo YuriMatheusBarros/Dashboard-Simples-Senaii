@@ -90,20 +90,21 @@
             <button type="submit">Entrar</button>
         </form>
         <div class="esqueci-senha">
+            <a href="#">Cadastre-se</a>
+            <br>
             <a href="#">Esqueceu sua senha?</a>
         </div>
     </div>
 
     <script>
         document.getElementById('formulario-login').addEventListener('submit', function(evento) {
-            evento.preventDefault(); // Impede o envio do formulário para verificar os campos
+            evento.preventDefault(); 
 
             const usuario = document.getElementById('usuario').value;
             const senha = document.getElementById('senha').value;
 
             if (usuario && senha) {
-                // Ambos os campos estão preenchidos, redireciona para o dashboard
-                window.location.href = 'http://127.0.0.1:5501/dashboard-student/index.html';
+                window.location.href = '../dashboard-simples/index.html';
             } else {
                 alert('Por favor, preencha todos os campos.');
             }
